@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- У 19 групи користувача - поле group_ids (до 18 було groups_id).
+         Command.set повністю замінює набір груп -->
+    <record id="osl_user_demo_librarian" model="res.users">
+        <field name="name">Library Manager</field>
+        <field name="login">librarian</field>
+        <field name="group_ids" eval="[Command.set([
+            ref('base.group_user'),
+            ref('base.group_partner_manager'),
+        ])]"/>
+    </record>
+
+</odoo>

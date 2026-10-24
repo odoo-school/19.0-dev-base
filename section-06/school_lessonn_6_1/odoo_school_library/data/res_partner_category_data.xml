@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Звичайний запис: при кожному -u приводиться до стану з файлу,
+         а якщо його видалили - створюється знову -->
+    <record id="osl_partner_category_author" model="res.partner.category">
+        <field name="name">Автор</field>
+    </record>
+
+    <!-- noupdate лише для частини файлу - через вкладений <data>.
+         forcecreate="0": якщо тег видалили, при -u він НЕ з'явиться знову -->
+    <data noupdate="1">
+        <record id="osl_partner_category_reader" model="res.partner.category" forcecreate="0">
+            <field name="name">Читач</field>
+            <field name="color" eval="4"/>
+        </record>
+    </data>
+
+</odoo>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="osl_book_demo_hobbit" model="odoo.school.library.book">
+        <!-- Char -->
+        <field name="name">The Hobbit 123</field>
+        <field name="isbn">978-0-261-10221-7</field>
+        <!-- Selection: у тілі тегу ключ, а не підпис -->
+        <field name="inventory_state">available</field>
+        <!-- Date: фіксована дата рядком YYYY-MM-DD -->
+        <field name="publication_date">1937-09-21</field>
+        <!-- Many2one через ref: у межах свого модуля без префікса -->
+        <field name="author_id" ref="osl_author_demo_tolkien"/>
+        <!-- Binary: файл кодується в base64, шлях від кореня addons -->
+        <field name="image_1920" type="base64" file="odoo_school_library/static/img/book_hobbit.png"/>
+    </record>
+
+    <record id="osl_book_demo_zakhar_berkut" model="odoo.school.library.book">
+        <field name="name">Zakhar Berkut</field>
+        <field name="isbn">978-966-03-5443-2</field>
+        <field name="inventory_state">pending</field>
+        <field name="author_id" ref="osl_author_demo_franko"/>
+        <field name="image_1920" type="base64" file="odoo_school_library/static/img/book_zakhar_berkut.png"/>
+        <!-- Date відносно дати встановлення: рік тому -->
+        <field name="publication_date" eval="(DateTime.today() - relativedelta(years=1)).strftime('%Y-%m-%d')"/>
+        <field name="reader_id" ref="osl_reader_demo_olena"/>
+        <!-- Datetime відносно дати встановлення: тиждень тому (в UTC) -->
+        <field name="taken_date" eval="(DateTime.now() - timedelta(days=7)).strftime('%Y-%m-%d %H:%M:%S')"/>
+        <field name="user_id" ref="osl_user_demo_librarian"/>
+    </record>
+
+    <record id="osl_book_demo_hobbit_1937" model="odoo.school.library.book">
+        <field name="name">The Hobbit (first edition)</field>
+        <field name="isbn">978-0-04-823069-6</field>
+        <field name="inventory_state">out_of_stock</field>
+        <field name="publication_date">1937-09-21</field>
+        <field name="author_id" ref="osl_author_demo_tolkien"/>
+    </record>
+
+    <!-- <function> викликає метод моделі під час завантаження даних.
+         У noupdate-блоці він виконується лише при встановленні модуля:
+         архівуємо застаріле видання -->
+    <data noupdate="1">
+        <function model="odoo.school.library.book" name="action_archive"
+                  eval="[[ref('osl_book_demo_hobbit_1937')]]"/>
+    </data>
+
+    <!-- <delete> за XML ID: видаляє лише запис, створений цим модулем
+         у demo/res_partner_demo.xml -->
+    <delete model="res.partner" id="osl_author_demo_unknown"/>
+
+</odoo>
