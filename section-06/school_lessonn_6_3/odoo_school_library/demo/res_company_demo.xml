@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Оновлення запису іншого модуля: повний XML ID чужого запису.
+         Записуються лише перелічені поля, решта лишається як була -->
+    <record id="base.main_company" model="res.company">
+        <field name="name">Odoo School Library</field>
+    </record>
+
+</odoo>
