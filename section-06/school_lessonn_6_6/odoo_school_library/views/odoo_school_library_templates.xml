@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Сторінка контролера /library/my-books (controllers/main.py) -->
+    <template id="odoo_school_library_my_books_page" name="Library: My Books">
+        <t t-call="web.frontend_layout">
+            <div class="container py-4">
+                <h2>Books of <t t-out="reader.name"/></h2>
+                <table t-if="books" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Taken On</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="books" t-as="book">
+                            <td t-out="book.name"/>
+                            <td t-out="book.author_id.display_name"/>
+                            <td t-out="book.taken_date" t-options="{'widget': 'date'}"/>
+                        </tr>
+                    </tbody>
+                </table>
+                <p t-else="">You have no books from the library.</p>
+            </div>
+        </t>
+    </template>
+
+</odoo>
