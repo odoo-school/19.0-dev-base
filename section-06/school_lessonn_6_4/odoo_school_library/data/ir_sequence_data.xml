@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Master data: послідовність для інвентарних номерів книг.
+     noupdate="1" на <odoo> - увесь файл неоновлюваний: користувач може
+     змінити префікс чи нумерацію, і -u цього не затре. -->
+<odoo noupdate="1">
+
+    <record id="osl_seq_library_book" model="ir.sequence">
+        <field name="name">Library Book</field>
+        <field name="code">odoo.school.library.book</field>
+        <field name="prefix">BOOK/</field>
+        <field name="padding">5</field>
+        <!-- порожнє значення: послідовність спільна для всіх компаній -->
+        <field name="company_id" eval="False"/>
+    </record>
+
+</odoo>
