@@ -86,7 +86,7 @@ class OSLBook(models.Model):
             'odoo_school_library.odoo_school_library_group_user,!base.group_portal'
         ):
             raise UserError(self.env._("Only library staff can issue books."))
-        if not all(self.mapped('reader_id')):
+        if self.filtered(lambda book: not book.reader_id):
             raise UserError(self.env._("Set a reader before issuing the book."))
         # спершу явна перевірка: далі код працює через sudo()
         self.check_access('write')
