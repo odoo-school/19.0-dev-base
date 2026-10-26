@@ -10,7 +10,8 @@ class TestOSLMyBooksPage(HttpCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        # new_test_user задає пароль, що дорівнює логіну.
+        # new_test_user задає пароль, що дорівнює логіну (якщо логін коротший
+        # за 8 символів, його доповнюють літерами x до восьми).
         # Читачу група бібліотеки не потрібна - лише внутрішній користувач
         cls.reader_user = new_test_user(cls.env, login='test_reader_http', groups='base.group_user')
         Book = cls.env['odoo.school.library.book']
