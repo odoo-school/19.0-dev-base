@@ -1,6 +1,5 @@
 from psycopg2.errors import UniqueViolation
 
-from odoo.exceptions import ValidationError
 from odoo.tests import tagged
 from odoo.tools import mute_logger
 
@@ -38,5 +37,5 @@ class TestOSLBook(OSLTestCommon):
 
     def test_isbn_unique(self):
         self.Book.create({'name': 'Test Book 1', 'isbn': '978-0-00-000000-2'})
-        with mute_logger('odoo.sql_db'), self.assertRaises(UniqueViolation), self.assertRaises(ValidationError):
+        with mute_logger('odoo.sql_db'), self.assertRaises(UniqueViolation):
             self.Book.create({'name': 'Test Book 2', 'isbn': '978-0-00-000000-2'})
