@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Демо-файли Odoo завжди завантажує з noupdate=True,
+     тому окремий атрибут noupdate тут не потрібен -->
+<odoo>
+
+    <!-- Автор із прикладами всіх способів задати значення поля -->
+    <record id="osl_author_demo_tolkien" model="res.partner">
+        <!-- Char: значення тілом тегу -->
+        <field name="name">J. R. R. Tolkien</field>
+        <!-- Boolean: через eval з Python-значенням -->
+        <field name="is_company" eval="False"/>
+        <!-- Many2one через ref: XML ID чужого модуля пишемо повністю -->
+        <field name="company_id" ref="base.main_company"/>
+        <!-- Many2one через search: перший запис, що підпадає під домен -->
+        <field name="country_id" model="res.country" search="[('code', '=', 'GB')]"/>
+        <!-- Many2many: додати тег до наявних через Command.link -->
+        <field name="category_id" eval="[
+            Command.link(ref('osl_partner_category_author')),
+        ]"/>
+        <!-- One2many: створити пов'язаний запис через Command.create -->
+        <field name="child_ids" eval="[
+            Command.create({'name': 'Christopher Tolkien'}),
+        ]"/>
+        <!-- Html: розмітка прямо в тілі тегу з type="html" -->
+        <field name="comment" type="html">
+            <p>Автор «Гобіта» та <b>«Володаря перснів»</b>.</p>
+        </field>
+    </record>
+
+    <record id="osl_author_demo_shevchenko" model="res.partner">
+        <field name="name">Taras Shevchenko</field>
+        <field name="company_id" ref="base.main_company"/>
+        <field name="country_id" ref="base.ua"/>
+        <field name="category_id" eval="[
+            Command.link(ref('osl_partner_category_author')),
+        ]"/>
+    </record>
+
+    <record id="osl_author_demo_franko" model="res.partner">
+        <field name="name">Ivan Franko</field>
+        <field name="company_id" ref="base.main_company"/>
+        <field name="country_id" ref="base.ua"/>
+        <field name="category_id" eval="[
+            Command.link(ref('osl_partner_category_author')),
+        ]"/>
+    </record>
+
+    <record id="osl_reader_demo_olena" model="res.partner">
+        <field name="name">Olena Petrenko</field>
+        <field name="company_id" ref="base.main_company"/>
+        <field name="category_id" eval="[
+            Command.link(ref('osl_partner_category_reader')),
+        ]"/>
+    </record>
+
+    <!-- Цей запис видаляє <delete> у demo/odoo_school_library_book_demo.xml -->
+    <record id="osl_author_demo_unknown" model="res.partner">
+        <field name="name">Unknown Author</field>
+    </record>
+
+</odoo>

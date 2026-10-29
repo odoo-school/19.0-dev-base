@@ -1,0 +1,438 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* odoo_school_library
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-26 20:00+0000\n"
+"PO-Revision-Date: 2026-10-26 20:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: odoo_school_library
+#. odoo-python
+#: code:addons/odoo_school_library/models/odoo_school_library_book.py:0
+msgid "%(years)s years since publication"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.constraint,message:odoo_school_library.constraint_odoo_school_library_book_isbn_uniq
+msgid "A book with this ISBN already exists!"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__active
+msgid "Active"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:res.groups,name:odoo_school_library.odoo_school_library_group_manager
+msgid "Administrator"
+msgstr ""
+
+#. module: odoo_school_library
+#: model_terms:ir.ui.view,arch_db:odoo_school_library.odoo_school_library_book_form
+#: model_terms:ir.ui.view,arch_db:odoo_school_library.odoo_school_library_book_search
+msgid "Archived"
+msgstr ""
+
+#. module: odoo_school_library
+#: model_terms:ir.ui.view,arch_db:odoo_school_library.odoo_school_library_book_form
+msgid "Assign to me"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,help:odoo_school_library.field_odoo_school_library_book__inventory_number
+msgid "Assigned automatically from the 'odoo.school.library.book' sequence"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__author_id
+#: model:res.partner.category,name:odoo_school_library.osl_partner_category_author
+#: model_terms:ir.ui.view,arch_db:odoo_school_library.odoo_school_library_book_search
+#: model_terms:ir.ui.view,arch_db:odoo_school_library.odoo_school_library_my_books_page
+msgid "Author"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields.selection,name:odoo_school_library.selection__odoo_school_library_book__inventory_state__available
+#: model_terms:ir.ui.view,arch_db:odoo_school_library.odoo_school_library_book_search
+msgid "Available"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model,name:odoo_school_library.model_odoo_school_library_book
+msgid "Book"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.actions.act_window,name:odoo_school_library.action_odoo_school_library_book_sequence
+#: model:ir.ui.menu,name:odoo_school_library.odoo_school_library_menu_config_sequence
+msgid "Book Numbering"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.actions.act_window,name:odoo_school_library.action_odoo_school_library_book_window
+#: model:ir.ui.menu,name:odoo_school_library.odoo_school_library_menu_book
+msgid "Books"
+msgstr ""
+
+#. module: odoo_school_library
+#: model_terms:ir.ui.view,arch_db:odoo_school_library.odoo_school_library_my_books_page
+msgid "Books of"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.ui.menu,name:odoo_school_library.odoo_school_library_menu_catalog
+msgid "Catalog"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.ui.menu,name:odoo_school_library.odoo_school_library_menu_config
+msgid "Configuration"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,help:odoo_school_library.field_odoo_school_library_book__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__id
+msgid "ID"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__isbn
+msgid "ISBN"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,help:odoo_school_library.field_odoo_school_library_book__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,help:odoo_school_library.field_odoo_school_library_book__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,help:odoo_school_library.field_odoo_school_library_book__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__image_1920
+msgid "Image"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__image_1024
+msgid "Image 1024"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__image_128
+msgid "Image 128"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__image_256
+msgid "Image 256"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__image_512
+msgid "Image 512"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__inventory_number
+msgid "Inventory Number"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__inventory_state
+#: model_terms:ir.ui.view,arch_db:odoo_school_library.odoo_school_library_book_search
+msgid "Inventory State"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:res.groups,name:odoo_school_library.odoo_school_library_group_user
+msgid "Librarian"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.ui.menu,name:odoo_school_library.odoo_school_library_main_menu
+#: model:res.groups.privilege,name:odoo_school_library.res_groups_privilege_odoo_school_library
+msgid "Library"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.actions.server,name:odoo_school_library.osl_ir_cron_publication_anniversary_ir_actions_server
+msgid "Library: Publication anniversaries"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:res.groups,comment:odoo_school_library.odoo_school_library_group_user
+msgid "Manages own books only."
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: odoo_school_library
+#: model_terms:ir.ui.view,arch_db:odoo_school_library.odoo_school_library_book_search
+msgid "My Books"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,help:odoo_school_library.field_odoo_school_library_book__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,help:odoo_school_library.field_odoo_school_library_book__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: odoo_school_library
+#. odoo-python
+#: code:addons/odoo_school_library/models/odoo_school_library_book.py:0
+msgid "Only library administrators can write off books."
+msgstr ""
+
+#. module: odoo_school_library
+#. odoo-python
+#: code:addons/odoo_school_library/models/odoo_school_library_book.py:0
+msgid "Only library staff can issue books."
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields.selection,name:odoo_school_library.selection__odoo_school_library_book__inventory_state__out_of_stock
+msgid "Out of stock"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.ui.menu,name:odoo_school_library.odoo_school_library_menu_config_tags
+msgid "Partner Tags"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields.selection,name:odoo_school_library.selection__odoo_school_library_book__inventory_state__pending
+msgid "Pending"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__publication_date
+msgid "Publication Date"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__purchase_price
+msgid "Purchase Price"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__reader_id
+#: model:res.partner.category,name:odoo_school_library.osl_partner_category_reader
+msgid "Reader"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__user_id
+#: model_terms:ir.ui.view,arch_db:odoo_school_library.odoo_school_library_book_search
+msgid "Responsible"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:res.groups,comment:odoo_school_library.odoo_school_library_group_manager
+msgid "Sees and manages the whole catalogue."
+msgstr ""
+
+#. module: odoo_school_library
+#. odoo-python
+#: code:addons/odoo_school_library/models/odoo_school_library_book.py:0
+msgid "Set a reader before issuing the book."
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,help:odoo_school_library.field_odoo_school_library_book__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: odoo_school_library
+#: model_terms:ir.ui.view,arch_db:odoo_school_library.odoo_school_library_book_form
+msgid "Take Book"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__taken_date
+#: model_terms:ir.ui.view,arch_db:odoo_school_library.odoo_school_library_my_books_page
+msgid "Taken On"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,field_description:odoo_school_library.field_odoo_school_library_book__name
+#: model_terms:ir.ui.view,arch_db:odoo_school_library.odoo_school_library_book_form
+#: model_terms:ir.ui.view,arch_db:odoo_school_library.odoo_school_library_my_books_page
+msgid "Title"
+msgstr ""
+
+#. module: odoo_school_library
+#: model:ir.model.fields,help:odoo_school_library.field_odoo_school_library_book__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: odoo_school_library
+#: model_terms:ir.ui.view,arch_db:odoo_school_library.odoo_school_library_book_search
+msgid "Unassigned"
+msgstr ""
+
+#. module: odoo_school_library
+#: model_terms:ir.ui.view,arch_db:odoo_school_library.odoo_school_library_book_form
+msgid "Write Off"
+msgstr ""
+
+#. module: odoo_school_library
+#: model_terms:ir.ui.view,arch_db:odoo_school_library.odoo_school_library_book_form
+msgid "Write off this book? It will be archived."
+msgstr ""
+
+#. module: odoo_school_library
+#: model_terms:ir.ui.view,arch_db:odoo_school_library.odoo_school_library_my_books_page
+msgid "You have no books from the library."
+msgstr ""

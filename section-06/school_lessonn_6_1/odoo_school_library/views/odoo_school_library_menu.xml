@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Скорочений тег <menuitem> створює запис ir.ui.menu -->
+    <menuitem id="odoo_school_library_main_menu"
+              name="Library"
+              web_icon="odoo_school_library,static/description/icon.png"
+              sequence="300"/>
+
+    <menuitem id="odoo_school_library_menu_catalog"
+              name="Catalog"
+              parent="odoo_school_library_main_menu"
+              sequence="100"/>
+
+</odoo>

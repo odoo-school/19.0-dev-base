@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="odoo_school_library_book_tree" model="ir.ui.view">
+        <field name="name">odoo.school.library.book.list</field>
+        <field name="model">odoo.school.library.book</field>
+        <field name="arch" type="xml">
+            <list>
+                <!-- groups у view - лише видимість: колонку бачить адміністратор,
+                     але номер доступний бібліотекарю на формі й через RPC -->
+                <field name="inventory_number" groups="odoo_school_library.odoo_school_library_group_manager"/>
+                <field name="name"/>
+                <field name="isbn" optional="show"/>
+                <field name="author_id"/>
+                <field name="publication_date" optional="show"/>
+                <field name="reader_id" optional="show"/>
+                <field name="taken_date" optional="hide"/>
+                <field name="user_id" optional="show"/>
+                <field name="inventory_state" widget="badge"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="odoo_school_library_book_form" model="ir.ui.view">
+        <field name="name">odoo.school.library.book.form</field>
+        <field name="model">odoo.school.library.book</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_assign_to_me" string="Assign to me" type="object"
+                            invisible="user_id"/>
+                    <button name="action_take_book" string="Take Book" type="object" class="btn-primary"
+                            invisible="not reader_id or inventory_state != 'available'"/>
+                    <button name="action_write_off" string="Write Off" type="object"
+                            invisible="not active"
+                            confirm="Write off this book? It will be archived."/>
+                    <field name="inventory_state" widget="statusbar" options="{'clickable': '1'}"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <field name="image_1920" widget="image" class="oe_avatar" options="{'preview_image': 'image_128'}"/>
+                    <div class="oe_title">
+                        <h1><field name="name" placeholder="Title"/></h1>
+                        <field name="inventory_number"/>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="author_id"/>
+                            <field name="isbn"/>
+                            <field name="publication_date"/>
+                            <!-- поле з groups на моделі: бібліотекар його не побачить -->
+                            <field name="purchase_price"/>
+                        </group>
+                        <group>
+                            <field name="reader_id"/>
+                            <field name="taken_date" force_save="1"/>
+                            <field name="user_id"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="odoo_school_library_book_search" model="ir.ui.view">
+        <field name="name">odoo.school.library.book.search</field>
+        <field name="model">odoo.school.library.book</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="inventory_number"/>
+                <field name="isbn"/>
+                <field name="author_id"/>
+                <field name="reader_id"/>
+                <field name="user_id"/>
+                <filter name="filter_my_books" string="My Books" domain="[('user_id', '=', uid)]"/>
+                <filter name="filter_unassigned" string="Unassigned" domain="[('user_id', '=', False)]"/>
+                <separator/>
+                <filter name="filter_available" string="Available" domain="[('inventory_state', '=', 'available')]"/>
+                <separator/>
+                <filter name="filter_archived" string="Archived" domain="[('active', '=', False)]"/>
+                <group>
+                    <filter name="group_by_author" string="Author" context="{'group_by': 'author_id'}"/>
+                    <filter name="group_by_responsible" string="Responsible" context="{'group_by': 'user_id'}"/>
+                    <filter name="group_by_state" string="Inventory State" context="{'group_by': 'inventory_state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_odoo_school_library_book_window" model="ir.actions.act_window">
+        <field name="name">Books</field>
+        <field name="res_model">odoo.school.library.book</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- menuitem посилається на action вище, тому стоїть після нього -->
+    <menuitem id="odoo_school_library_menu_book"
+              name="Books"
+              parent="odoo_school_library_menu_catalog"
+              action="action_odoo_school_library_book_window"
+              sequence="10"/>
+
+</odoo>

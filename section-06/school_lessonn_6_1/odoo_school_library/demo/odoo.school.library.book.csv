@@ -1,0 +1,4 @@
+"id","name","isbn","author_id:id","publication_date"
+"osl_book_demo_fellowship","The Fellowship of the Ring","978-0-261-10235-4","odoo_school_library.osl_author_demo_tolkien","1954-07-29"
+"osl_book_demo_two_towers","The Two Towers","978-0-261-10236-1","odoo_school_library.osl_author_demo_tolkien","1954-11-11"
+"osl_book_demo_return_king","The Return of the King","978-0-261-10237-8","odoo_school_library.osl_author_demo_tolkien","1955-10-20"

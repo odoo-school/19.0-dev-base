@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Привілей (новий у 19) об'єднує групи модуля. Категорію вказуємо
+         на привілеї, а не на групі: поля category_id на res.groups у 19 немає.
+         base.module_category_customizations створюється з 'category' у manifest -->
+    <record id="res_groups_privilege_odoo_school_library" model="res.groups.privilege">
+        <field name="name">Library</field>
+        <field name="sequence">50</field>
+        <field name="category_id" ref="base.module_category_customizations"/>
+    </record>
+
+    <!-- Базова роль: implied_ids дає ще й внутрішнього користувача -->
+    <record id="odoo_school_library_group_user" model="res.groups">
+        <field name="name">Librarian</field>
+        <field name="sequence">10</field>
+        <field name="privilege_id" ref="res_groups_privilege_odoo_school_library"/>
+        <field name="implied_ids" eval="[
+            Command.link(ref('base.group_user')),
+        ]"/>
+        <field name="comment">Веде лише свої книги.</field>
+    </record>
+
+    <!-- Старша роль: неявно включає бібліотекаря. У 19 поле користувачів
+         групи - user_ids (до 19 було users); додаємо лише системних -->
+    <record id="odoo_school_library_group_manager" model="res.groups">
+        <field name="name">Administrator</field>
+        <field name="sequence">20</field>
+        <field name="privilege_id" ref="res_groups_privilege_odoo_school_library"/>
+        <field name="implied_ids" eval="[
+            Command.link(ref('odoo_school_library_group_user')),
+        ]"/>
+        <field name="user_ids" eval="[
+            Command.link(ref('base.user_root')),
+            Command.link(ref('base.user_admin')),
+        ]"/>
+        <field name="comment">Бачить і керує всім каталогом.</field>
+    </record>
+
+</odoo>

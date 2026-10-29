@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Правила в noupdate-блоці: адміністратор може підлаштувати домен,
+         і -u цього не затре -->
+    <data noupdate="1">
+
+        <!-- Групове правило: бібліотекар працює лише зі своїми книгами
+             та книгами без відповідального -->
+        <record id="odoo_school_library_book_rule_user" model="ir.rule">
+            <field name="name">Library Book: own or unassigned</field>
+            <field name="model_id" ref="model_odoo_school_library_book"/>
+            <field name="domain_force">[
+                '|',
+                ('user_id', '=', user.id),
+                ('user_id', '=', False),
+            ]</field>
+            <field name="groups" eval="[
+                Command.link(ref('odoo_school_library_group_user')),
+            ]"/>
+        </record>
+
+        <!-- "Відкривальне" правило для старшої групи: адміністратор неявно
+             теж бібліотекар, групові правила поєднуються через OR -->
+        <record id="odoo_school_library_book_rule_manager" model="ir.rule">
+            <field name="name">Library Book: all books</field>
+            <field name="model_id" ref="model_odoo_school_library_book"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[
+                Command.link(ref('odoo_school_library_group_manager')),
+            ]"/>
+        </record>
+
+    </data>
+
+</odoo>

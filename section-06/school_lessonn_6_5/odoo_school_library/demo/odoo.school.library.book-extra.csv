@@ -1,0 +1,3 @@
+"id","name","isbn","author_id:id","publication_date","user_id:id"
+"osl_book_demo_kobzar","Kobzar","978-966-03-4012-7","odoo_school_library.osl_author_demo_shevchenko","1840-04-30","odoo_school_library.osl_user_demo_librarian"
+"osl_book_demo_lys_mykyta","Lys Mykyta","978-966-10-1234-8","odoo_school_library.osl_author_demo_franko","1890-01-01",""

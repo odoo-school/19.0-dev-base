@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Два бібліотекарі з однаковою групою: правило записів покаже
+         кожному лише свої книги й книги без відповідального.
+         У 19 групи користувача - поле group_ids (до 19 було groups_id).
+         Command.set повністю замінює набір груп. Паролі - лише для демо -->
+    <record id="osl_user_demo_librarian" model="res.users">
+        <field name="name">Olena Kovalenko</field>
+        <field name="login">olena</field>
+        <field name="password">olena</field>
+        <field name="group_ids" eval="[Command.set([
+            ref('odoo_school_library_group_user'),
+        ])]"/>
+    </record>
+
+    <record id="osl_user_demo_librarian_taras" model="res.users">
+        <field name="name">Taras Melnyk</field>
+        <field name="login">taras</field>
+        <field name="password">taras</field>
+        <field name="group_ids" eval="[Command.set([
+            ref('odoo_school_library_group_user'),
+        ])]"/>
+    </record>
+
+</odoo>
